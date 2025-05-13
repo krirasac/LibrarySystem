@@ -19,16 +19,54 @@ namespace Template_Login
     /// </summary>
     public partial class StudentWindow : Window
     {
-        public StudentWindow()
+        private Student loggedInStudent;
+        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
+
+        public StudentWindow(Student student)
         {
             InitializeComponent();
+            loggedInStudent = student;
+            LoadStudentData();
+            LoadTransactionHistory();
+            LoadOverdueFines();
+        }
+        private void LoadStudentData()
+        {
+            nameTextBlock.Text = $"Name: {loggedInStudent.Name}";
+            contactTextBlock.Text = $"Contact: {loggedInStudent.ContactNumber}";
+            emailTextBlock.Text = $"Email: {loggedInStudent.StudentEmail}";
+            courseTextBlock.Text = $"Course ID: {loggedInStudent.CourseID}";
         }
 
-        private void manageUserAccountsButton(object sender, RoutedEventArgs e)
+        private void LoadTransactionHistory()
         {
-            UserManagementWindow userManagementWindow = new UserManagementWindow();
-            userManagementWindow.Show();
-            this.Close();
+            var transactions = from t in db.Transactions
+                               where t.StudentID == loggedInStudent.StudentID
+                               select new
+                               {
+                                   t.TransactionID,
+                                   t.BookID,
+                                   t.BorrowedDate,
+                                   t.ReturnDate,
+                                   t.ActualReturnDate
+                               };
+
+            transactionDataGrid.ItemsSource = transactions.ToList();
         }
+
+        private void LoadOverdueFines()
+        {
+            var fines = from f in db.Fines
+                        join t in db.Transactions on f.TransactionID equals t.TransactionID
+                        where t.StudentID == loggedInStudent.StudentID && f.StatusID == "Overdue"
+                        select new
+                        {
+                            f.FineAmount,
+                            f.DateOfPayment
+                        };
+
+            finesDataGrid.ItemsSource = fines.ToList();
+        }
+
     }
 }

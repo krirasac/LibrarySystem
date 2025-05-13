@@ -12,7 +12,7 @@ namespace Template_Login.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -53,6 +53,17 @@ namespace Template_Login.Properties {
         public string LoginPracticeConnectionString1 {
             get {
                 return ((string)(this["LoginPracticeConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MILKYWAY\\SQLEXPRESS;Initial Catalog=NULibrary;Integrated Security=Tru" +
+            "e;Encrypt=True;TrustServerCertificate=True")]
+        public string NULibraryConnectionString1 {
+            get {
+                return ((string)(this["NULibraryConnectionString1"]));
             }
         }
     }

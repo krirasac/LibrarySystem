@@ -1,27 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Template_Login
 {
-    /// <summary>
-    /// Interaction logic for adminHome.xaml
-    /// </summary>
     public partial class adminHome : Window
     {
+        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
+
         public adminHome()
         {
             InitializeComponent();
+            LoadCourses();
+            LoadStudents();
         }
 
         private void logoutButton(object sender, RoutedEventArgs e)
@@ -36,6 +27,32 @@ namespace Template_Login
             UserManagementWindow userManagementWindow = new UserManagementWindow();
             userManagementWindow.Show();
             this.Close();
+        }
+
+        private void LoadCourses()
+        {
+            try
+            {
+                var courses = from c in db.Courses select c;
+                coursesDataGrid.ItemsSource = courses.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading courses: " + ex.Message);
+            }
+        }
+
+        private void LoadStudents()
+        {
+            try
+            {
+                var students = from s in db.Students select s;
+                studentsDataGrid.ItemsSource = students.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading students: " + ex.Message);
+            }
         }
     }
 }

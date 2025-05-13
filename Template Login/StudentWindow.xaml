@@ -5,9 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Template_Login"
         mc:Ignorable="d"
-        Title="StudentWindow" Height="450" Width="800">
+        Title="StudentWindow" Height="500" Width="800">
     <Grid>
-        <Button Content="Manage User Accounts" HorizontalAlignment="Left" Margin="463,42,0,0" VerticalAlignment="Top" Click="manageUserAccountsButton"/>
+        <StackPanel Margin="20">
+            <TextBlock x:Name="nameTextBlock" FontWeight="Bold" FontSize="14"/>
+            <TextBlock x:Name="contactTextBlock"/>
+            <TextBlock x:Name="emailTextBlock"/>
+            <TextBlock x:Name="courseTextBlock"/>
+
+            <TextBlock Text="Transaction History:" FontSize="16" Margin="0,20,0,5"/>
+            <DataGrid x:Name="transactionDataGrid" AutoGenerateColumns="True" Height="150"/>
+
+            <TextBlock Text="Overdue Fines:" FontSize="16" Margin="0,20,0,5"/>
+            <DataGrid x:Name="finesDataGrid" AutoGenerateColumns="True" Height="100"/>
+
+            <!--<Button Content="Logout" Width="100" Margin="0,20,0,0" Click="Logout_Click"/>-->
+        </StackPanel>
 
     </Grid>
 </Window>

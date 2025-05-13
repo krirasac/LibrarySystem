@@ -5,11 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Template_Login"
         mc:Ignorable="d"
-           Title="adminHome" Height="450" Width="800">
+        Title="Admin Home" Height="450" Width="800">
     <Grid>
-        <Label Content="Admin Home" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="343,0,0,0"/>
-        <Button Content="Logout" HorizontalAlignment="Left" Margin="647,42,0,0" VerticalAlignment="Top" Click="logoutButton"/>
-        <Button Content="Manage User Accounts" HorizontalAlignment="Left" Margin="463,42,0,0" VerticalAlignment="Top" Click="manageUserAccountsButton"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Admin Home" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+            <Button Content="Manage User Accounts" Margin="20,0,0,0" Click="manageUserAccountsButton"/>
+            <Button Content="Logout" Margin="20,0,0,0" Click="logoutButton"/>
+        </StackPanel>
+
+        <TabControl Grid.Row="1" Margin="10">
+            <!-- Courses Tab -->
+            <TabItem Header="Courses">
+                <DataGrid x:Name="coursesDataGrid" AutoGenerateColumns="True" Margin="5"/>
+            </TabItem>
+
+            <!-- Students Tab -->
+            <TabItem Header="Students">
+                <DataGrid x:Name="studentsDataGrid" AutoGenerateColumns="True" Margin="5"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

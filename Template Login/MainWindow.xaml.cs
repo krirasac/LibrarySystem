@@ -20,7 +20,7 @@ namespace Template_Login
     /// </summary>
     public partial class MainWindow : Window
     {
-        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString);
+        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
 
         public MainWindow()
         {
@@ -39,28 +39,30 @@ namespace Template_Login
                 {
                     MessageBox.Show("Login Successful", "Welcome Back!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
-                    var users = (from u in db.Students
-                                 where u.StudentID == user_txt.Text
+                    var users = (from u in db.Users
+                                 where u.UserID == user_txt.Text
                                  select u).FirstOrDefault();
 
-                    if (users.UserRole == "Admin")
+                    if (users.RoleID == "R1")
                     {
                         adminHome adminHome = new adminHome();
                         adminHome.Show();
                         this.Close();
                     }
-                    else if (users.UserRole == "Librarian")
+                    else if (users.RoleID == "R2")
                     {
                         //librarianHome librarianHome = new librarianHome();
                         //librarianHome.Show();
                         //this.Close();
                     }
-                    else if (users.UserRole == "Student")
+                    else if (users.RoleID == "R3")
                     {
-                        StudentWindow studentHomepage = new StudentWindow();
+                        var student = db.Students.FirstOrDefault(s => s.StudentID == users.UserID);
+                        StudentWindow studentHomepage = new StudentWindow(student);
                         studentHomepage.Show();
                         this.Close();
                     }
+
                 }
                 else
                 {
@@ -73,8 +75,8 @@ namespace Template_Login
         {
             string fetchedPassword = "";
 
-            var users = (from u in db.Students
-                         where u.StudentID == user_txt.Text
+            var users = (from u in db.Users
+                         where u.UserID == user_txt.Text
                          select u).FirstOrDefault();
 
             if (users == null)
