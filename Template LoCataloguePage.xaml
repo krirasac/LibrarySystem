@@ -1,0 +1,31 @@
+<Page x:Class="Template_Login.Pages.CataloguePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Title="CataloguePage">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+            <TextBox x:Name="SearchBox" Width="200" Margin="0 0 10 0" PlaceholderText="Search by Title/Author/ISBN"/>
+            <Button Content="Search" Click="Search_Click"/>
+            <CheckBox x:Name="AvailabilityFilter" Content="Only Available" Margin="10 0 0 0" />
+        </StackPanel>
+
+        <DataGrid x:Name="BooksDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding BookID}" Width="Auto"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*"/>
+                <DataGridTextColumn Header="Author" Binding="{Binding Author}" Width="*"/>
+                <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" Width="*"/>
+                <DataGridTextColumn Header="Available" Binding="{Binding IsAvailable}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
