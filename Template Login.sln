@@ -5,6 +5,11 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template Login", "Template Login\Template Login.csproj", "{0C7A77B8-B2E9-4D62-81ED-4F6F6864B238}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B66AE1C4-B6BA-4E37-80E8-1F1B72381C19}"
+	ProjectSection(SolutionItems) = preProject
+		D:\Krizia\Downloads\Template LoCataloguePage.xaml = D:\Krizia\Downloads\Template LoCataloguePage.xaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

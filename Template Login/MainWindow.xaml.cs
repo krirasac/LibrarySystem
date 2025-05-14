@@ -51,9 +51,9 @@ namespace Template_Login
                     }
                     else if (users.RoleID == "R2")
                     {
-                        //librarianHome librarianHome = new librarianHome();
-                        //librarianHome.Show();
-                        //this.Close();
+                        LibrarianWindow librarianHome = new LibrarianWindow();
+                        librarianHome.Show();
+                        this.Close();
                     }
                     else if (users.RoleID == "R3")
                     {
