@@ -66,7 +66,7 @@ namespace Template_Login
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::Template_Login.Properties.Settings.Default.NULibraryConnectionString1, mappingSource)
+				base(global::Template_Login.Properties.Settings.Default.NULibraryConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}

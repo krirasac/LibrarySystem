@@ -19,8 +19,10 @@ namespace Template_Login
     /// </summary>
     public partial class Circulation : Window
     {
-        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
+        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString);
         private Transaction transaction;
+        private Student borrower;
+        private LibraryCatalog catalog;
 
 
         public Circulation()
@@ -31,11 +33,7 @@ namespace Template_Login
             LoadBook();
         }
 
-        private void gridTrasactions_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            cbStudent.SelectedItem = gridTrasactions.SelectedItem;
-        }
-
+        //Loads list (transaction, students, and books)
         private void LoadTransaction()
         {
             try
@@ -54,8 +52,9 @@ namespace Template_Login
             var student = from t in db.Transactions
                           join s in db.Students on t.StudentID equals s.StudentID
                           select s.Name;
-            
+
             cbStudent.ItemsSource = student.ToList();
+
         }
 
         private void LoadBook()
@@ -67,6 +66,21 @@ namespace Template_Login
             cbBook.ItemsSource = book.ToList();
         }
 
+        //displays based on selection
+        private void gridTrasactions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItem = gridTrasactions.SelectedItem;
+            var userIdProp = selectedItem.GetType().GetProperty("Name");
+            string selectedId = userIdProp?.GetValue(selectedItem)?.ToString();
+            
+            if (string.IsNullOrEmpty(selectedId)) return;
+
+            borrower = db.Students.FirstOrDefault(u => u.Name == selectedId);
+            cbStudent.SelectedItem = borrower.Name.ToString();
+
+        }
+
+        //filters out the list based on the choice
         private void cbStudent_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             FilterList(cbStudent.SelectedItem.ToString());
@@ -83,6 +97,7 @@ namespace Template_Login
 
                                select new
                                {
+                                   t.TransactionID,
                                    s.Name,
                                    b.Title,
                                    t.BorrowedDate,
@@ -104,6 +119,7 @@ namespace Template_Login
 
                                select new
                                {
+                                   t.TransactionID,
                                    s.Name,
                                    b.Title,
                                    t.BorrowedDate,

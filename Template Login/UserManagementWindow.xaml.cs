@@ -7,7 +7,7 @@ namespace Template_Login
 {
     public partial class UserManagementWindow : Window
     {
-        private readonly DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
+        private readonly DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString);
         private User _selectedUser;
 
         public UserManagementWindow()

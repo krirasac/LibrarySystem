@@ -59,6 +59,9 @@
     <Compile Include="adminHome.xaml.cs">
       <DependentUpon>adminHome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Catalogue.xaml.cs">
+      <DependentUpon>Catalogue.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Circulation.xaml.cs">
       <DependentUpon>Circulation.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <DependentUpon>UserManagementWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="adminHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Catalogue.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
