@@ -20,7 +20,7 @@ namespace Template_Login
     /// </summary>
     public partial class MainWindow : Window
     {
-        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
+        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibrary__1_ConnectionString);
 
         public MainWindow()
         {

@@ -7,7 +7,7 @@ namespace Template_Login
 {
     public partial class UserManagementWindow : Window
     {
-        private readonly DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
+        private readonly DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibrary__1_ConnectionString);
         private User _selectedUser;
 
         public UserManagementWindow()
@@ -21,6 +21,9 @@ namespace Template_Login
         {
             try
             {
+                addRoleComboBox.Items.Clear();
+                updateRoleComboBox.Items.Clear();
+
                 var roles = db.Roles.Select(r => r.RoleDesc).ToList();
                 addRoleComboBox.ItemsSource = roles;
                 updateRoleComboBox.ItemsSource = roles;

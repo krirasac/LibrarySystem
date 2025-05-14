@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NULibrary" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MILKYWAY\SQLEXPRESS;Initial Catalog=NULibrary;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Template_Login.Properties.Settings" SettingsPropertyName="NULibraryConnectionString1" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NULibrary (1)" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CCL2-22;Initial Catalog=&quot;NULibrary (1)&quot;;User ID=sa;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Template_Login.Properties.Settings" SettingsPropertyName="NULibrary__1_ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Course" Member="Courses">
     <Type Name="Course">
       <Column Name="CourseID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

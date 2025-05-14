@@ -22,7 +22,7 @@ namespace Template_Login
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="NULibrary")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="NULibrary (1)")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -66,7 +66,7 @@ namespace Template_Login
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::Template_Login.Properties.Settings.Default.NULibraryConnectionString1, mappingSource)
+				base(global::Template_Login.Properties.Settings.Default.NULibrary__1_ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

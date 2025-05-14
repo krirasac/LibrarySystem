@@ -22,8 +22,8 @@
                 <TextBox x:Name="addUserIdTextBox" Width="100" Margin="5"/>
                 <Label Content="Password:" Margin="5"/>
                 <TextBox x:Name="addPasswordTextBox" Width="100" Margin="5"/>
-                <Label Content="User Name:" Margin="5"/>
-                <TextBox x:Name="addUserNameTextBox" Width="150" Margin="5"/>
+                <!--<Label Content="User Name:" Margin="5"/>
+                <TextBox x:Name="addUserNameTextBox" Width="150" Margin="5"/>-->
                 <Label Content="Role:" Margin="5"/>
                 <ComboBox x:Name="addRoleComboBox" Width="120" Margin="5" SelectedValuePath="Content">
                     <ComboBoxItem Content="Admin" />
