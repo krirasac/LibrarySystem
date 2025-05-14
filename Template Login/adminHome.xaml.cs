@@ -12,7 +12,7 @@ namespace Template_Login
         {
             InitializeComponent();
             LoadCourses();
-            LoadStudents();
+            LoadStudents(); 
         }
 
         private void logoutButton(object sender, RoutedEventArgs e)
