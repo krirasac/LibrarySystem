@@ -1,0 +1,18 @@
+﻿<Window x:Class="Template_Login.LibrarianWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Template_Login"
+        mc:Ignorable="d"
+        Title="Librarian" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Library Managemenent System" HorizontalAlignment="Left" Height="32" Margin="78,65,0,0" VerticalAlignment="Top" Width="194" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btnCatalogue" Content="Library Catalogue" HorizontalAlignment="Left" Height="66" Margin="124,234,0,0" VerticalAlignment="Top" Width="168"/>
+        <Button x:Name="btnProfile" Content="Profile" HorizontalAlignment="Left" Height="66" Margin="504,234,0,0" VerticalAlignment="Top" Width="168"/>
+        <Button x:Name="btnTransaction" Content="Library Transactions" HorizontalAlignment="Center" Height="66" Margin="0,234,0,0" VerticalAlignment="Top" Width="168" Click="btnTransaction_Click"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Height="32" Margin="625,65,0,0" VerticalAlignment="Top" Width="111"/>
+        <Label Content="Welcome, [Librarian]" HorizontalAlignment="Left" Height="32" Margin="78,124,0,0" VerticalAlignment="Top" Width="144" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>

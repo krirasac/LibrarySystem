@@ -59,10 +59,16 @@
     <Compile Include="adminHome.xaml.cs">
       <DependentUpon>adminHome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Circulation.xaml.cs">
+      <DependentUpon>Circulation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LibrarianWindow.xaml.cs">
+      <DependentUpon>LibrarianWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
@@ -71,6 +77,14 @@
       <DependentUpon>UserManagementWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="adminHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Circulation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LibrarianWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Northville.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

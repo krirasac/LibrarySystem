@@ -112,4 +112,38 @@
       <Column Name="Time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Function Name="dbo.AddNewBook" Method="AddNewBook">
+    <Parameter Name="BookID" Parameter="bookID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ISBN" Parameter="iSBN" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Author" Parameter="author" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PublicationYear" Parameter="publicationYear" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GenreID" Parameter="genreID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NoOfAvailableCopies" Parameter="noOfAvailableCopies" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewStudent" Method="AddNewStudent">
+    <Parameter Name="StudentID" Parameter="studentID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ContactNumber" Parameter="contactNumber" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="StudentEmail" Parameter="studentEmail" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PayFine" Method="PayFine">
+    <Parameter Name="FineID" Parameter="fineID" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.RecordVisit" Method="RecordVisit">
+    <Parameter Name="VisitID" Parameter="visitID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="StudentID" Parameter="studentID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Date" Parameter="date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Time" Parameter="time" Type="System.TimeSpan" DbType="Time" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ReturnBookAndApplyFine" Method="ReturnBookAndApplyFine">
+    <Parameter Name="TransactionID" Parameter="transactionID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FineID" Parameter="fineID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

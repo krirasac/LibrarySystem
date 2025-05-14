@@ -60,6 +60,8 @@ namespace Template_Login
             string password = addPasswordTextBox.Text.Trim();
             string selectedRole = addRoleComboBox.SelectedItem?.ToString();
 
+
+
             if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(selectedRole))
             {
                 MessageBox.Show("User ID, password, and role are required.");

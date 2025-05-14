@@ -190,6 +190,41 @@ namespace Template_Login
 				return this.GetTable<Visit>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewBook")]
+		public int AddNewBook([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookID", DbType="VarChar(50)")] string bookID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISBN", DbType="VarChar(20)")] string iSBN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author", DbType="VarChar(100)")] string author, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PublicationYear", DbType="Int")] System.Nullable<int> publicationYear, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GenreID", DbType="VarChar(50)")] string genreID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NoOfAvailableCopies", DbType="Int")] System.Nullable<int> noOfAvailableCopies)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookID, iSBN, title, author, publicationYear, genreID, noOfAvailableCopies);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewStudent")]
+		public int AddNewStudent([global::System.Data.Linq.Mapping.ParameterAttribute(Name="StudentID", DbType="VarChar(50)")] string studentID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="VarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactNumber", DbType="VarChar(11)")] string contactNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="StudentEmail", DbType="VarChar(100)")] string studentEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="VarChar(50)")] string courseID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), studentID, name, contactNumber, studentEmail, courseID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PayFine")]
+		public int PayFine([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FineID", DbType="VarChar(10)")] string fineID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fineID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RecordVisit")]
+		public int RecordVisit([global::System.Data.Linq.Mapping.ParameterAttribute(Name="VisitID", DbType="VarChar(10)")] string visitID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="StudentID", DbType="VarChar(10)")] string studentID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Date", DbType="Date")] System.Nullable<System.DateTime> date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Time", DbType="Time")] System.Nullable<System.TimeSpan> time)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), visitID, studentID, date, time);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ReturnBookAndApplyFine")]
+		public int ReturnBookAndApplyFine([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TransactionID", DbType="VarChar(50)")] string transactionID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FineID", DbType="VarChar(50)")] string fineID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), transactionID, fineID);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Course")]

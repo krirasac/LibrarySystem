@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Template_Login"
         mc:Ignorable="d"
-                Title="MainWindow" Height="210" Width="335" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Button x:Name="login_btn" Content="Login" HorizontalAlignment="Center" Margin="0,139,0,0" VerticalAlignment="Top" Width="211" Click="login_btn_Click"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="50,37,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="user_txt" HorizontalAlignment="Left" Margin="153,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="50,79,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="pass_txt" HorizontalAlignment="Left" Margin="153,87,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                Title="MainWindow" Height="345" Width="505" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#FF18245B">
+        <Canvas Margin="64,125,64,41">
+            <Button x:Name="login_btn" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Top" Width="315" Click="login_btn_Click" Height="26" Canvas.Left="33" Canvas.Top="120"/>
+            <Label Content="Username" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29" Width="134" Padding="0,5,5,5" Canvas.Left="33" Canvas.Top="17" Foreground="#FFF1F1F1" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="user_txt" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Top" Width="210" Height="24" Canvas.Left="138" Canvas.Top="22"/>
+            <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29" Width="128" Padding="0,5,5,5" Canvas.Left="33" Canvas.Top="61" Foreground="#FFF1F1F1" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="pass_txt" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Top" Width="210" Height="24" Canvas.Left="138" Canvas.Top="65"/>
+        </Canvas>
+        <Image Source="/Northville.png" HorizontalAlignment="Left" Height="84" Margin="124,38,0,0" VerticalAlignment="Top" Width="87" Stretch="UniformToFill"/>
+        <Label Content="Library System" HorizontalAlignment="Left" Height="48" Margin="216,65,0,0" VerticalAlignment="Top" Width="170" Foreground="#FFF1F1F1" FontWeight="Bold" FontSize="20" Padding="15,5,5,5"/>
     </Grid>
 </Window>
