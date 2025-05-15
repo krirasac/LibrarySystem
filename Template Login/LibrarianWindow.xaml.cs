@@ -19,12 +19,18 @@ namespace Template_Login
     /// </summary>
     public partial class LibrarianWindow : Window
     {
+        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
         private string staff;
+        private Staff librarian;
 
         public LibrarianWindow(string id)
         {
             InitializeComponent();
             staff = id;
+            librarian = db.Staffs.FirstOrDefault(s => s.StaffID == staff);
+            lbLibrarian.Content = $"Welcome, {librarian.Name}";
+
+
         }
 
         private void btnTransaction_Click(object sender, RoutedEventArgs e)

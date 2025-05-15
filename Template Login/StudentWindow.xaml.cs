@@ -68,5 +68,12 @@ namespace Template_Login
             finesDataGrid.ItemsSource = fines.ToList();
         }
 
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+
+            MainWindow login = new MainWindow();
+            login.Show();
+            this.Close();
+        }
     }
 }

@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Template_Login"
         mc:Ignorable="d"
-        Title="Librarian" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Label Content="Library Managemenent System" HorizontalAlignment="Left" Height="32" Margin="78,65,0,0" VerticalAlignment="Top" Width="194" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btnCatalogue" Content="Library Catalogue" HorizontalAlignment="Left" Height="66" Margin="244,234,0,0" VerticalAlignment="Top" Width="168" Click="btnCatalogue_Click"/>
-        <Button x:Name="btnTransaction" Content="Library Transactions" HorizontalAlignment="Left" Height="66" Margin="436,234,0,0" VerticalAlignment="Top" Width="168" Click="btnTransaction_Click"/>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Height="32" Margin="625,65,0,0" VerticalAlignment="Top" Width="111" Click="btnLogout_Click"/>
-        <Label Content="Welcome, [Librarian]" HorizontalAlignment="Left" Height="32" Margin="78,124,0,0" VerticalAlignment="Top" Width="144" HorizontalContentAlignment="Center"/>
+        Title="Librarian" Height="350" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF18245B">
+        <Label Content="Library Managemenent System" HorizontalAlignment="Left" Height="32" Margin="158,65,0,0" VerticalAlignment="Top" Width="307" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="#FFF1F1F1" FontSize="18"/>
+        <Button x:Name="btnCatalogue" Content="Library Catalogue" HorizontalAlignment="Left" Height="66" Margin="178,179,0,0" VerticalAlignment="Top" Width="168" Click="btnCatalogue_Click"/>
+        <Button x:Name="btnTransaction" Content="Library Transactions" HorizontalAlignment="Left" Height="66" Margin="374,179,0,0" VerticalAlignment="Top" Width="168" Click="btnTransaction_Click"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Height="32" Margin="634,65,0,0" VerticalAlignment="Top" Width="112" Click="btnLogout_Click"/>
+        <Label x:Name="lbLibrarian" Content="Welcome, [Librarian]" HorizontalAlignment="Left" Height="32" Margin="178,104,0,0" VerticalAlignment="Top" Width="179" Foreground="#F1F1F1F1"/>
+        <Image Source="/Northville.png" HorizontalAlignment="Left" Height="83" Margin="57,53,0,0" VerticalAlignment="Top" Width="83"/>
 
     </Grid>
 </Window>

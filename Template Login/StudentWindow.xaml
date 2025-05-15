@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Template_Login"
         mc:Ignorable="d"
-        Title="StudentWindow" Height="500" Width="800">
-    <Grid>
+        Title="StudentWindow" Height="530" Width="800">
+    <Grid Background="#FF18245B">
         <StackPanel Margin="20">
-            <TextBlock x:Name="nameTextBlock" FontWeight="Bold" FontSize="14"/>
-            <TextBlock x:Name="contactTextBlock"/>
-            <TextBlock x:Name="emailTextBlock"/>
-            <TextBlock x:Name="courseTextBlock"/>
+            <TextBlock x:Name="nameTextBlock" FontWeight="Bold" FontSize="14" Foreground="#FFF1F1F1"/>
+            <TextBlock x:Name="contactTextBlock" Foreground="#FFF1F1F1"/>
+            <TextBlock x:Name="emailTextBlock" Foreground="#FFF1F1F1"/>
+            <TextBlock x:Name="courseTextBlock" Foreground="#FFF1F1F1"/>
 
-            <TextBlock Text="Transaction History:" FontSize="16" Margin="0,20,0,5"/>
+            <TextBlock Text="Transaction History:" FontSize="16" Margin="0,20,0,5" Foreground="#FFF1F1F1" FontWeight="Bold"/>
             <DataGrid x:Name="transactionDataGrid" AutoGenerateColumns="True" Height="150"/>
 
-            <TextBlock Text="Overdue Fines:" FontSize="16" Margin="0,20,0,5"/>
+            <TextBlock Text="Overdue Fines:" FontSize="16" Margin="0,20,0,5" FontWeight="Bold" Foreground="#FFF1F1F1"/>
             <DataGrid x:Name="finesDataGrid" AutoGenerateColumns="True" Height="100"/>
 
-            <!--<Button Content="Logout" Width="100" Margin="0,20,0,0" Click="Logout_Click"/>-->
+            <Button Content="Logout" Width="100" Margin="0,20,0,0" Click="Logout_Click"/>
         </StackPanel>
+        <Image Source="/Northville.png" HorizontalAlignment="Left" Height="94" Margin="671,20,0,0" VerticalAlignment="Top" Width="96"/>
 
     </Grid>
 </Window>

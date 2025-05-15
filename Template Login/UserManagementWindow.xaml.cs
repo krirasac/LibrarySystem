@@ -21,6 +21,8 @@ namespace Template_Login
         {
             try
             {
+                addRoleComboBox.Items.Clear();
+                updateRoleComboBox.Items.Clear();
                 var roles = db.Roles.Select(r => r.RoleDesc).ToList();
                 addRoleComboBox.ItemsSource = roles;
                 updateRoleComboBox.ItemsSource = roles;
@@ -215,7 +217,9 @@ namespace Template_Login
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            adminHome admin = new adminHome();
+            admin.Show();
+            this.Close();
         }
     }
 }
