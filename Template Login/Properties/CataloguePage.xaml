@@ -9,23 +9,38 @@
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Search + Actions -->
         <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
             <TextBox x:Name="SearchBox" Width="200" Margin="0 0 10 0" PlaceholderText="Search by Title/Author/ISBN"/>
             <Button Content="Search" Click="Search_Click"/>
-            <CheckBox x:Name="AvailabilityFilter" Content="Only Available" Margin="10 0 0 0" />
+            <CheckBox x:Name="AvailabilityFilter" Content="Only Available" Margin="10 0 0 0"/>
         </StackPanel>
 
-        <DataGrid x:Name="BooksDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+        <!-- Input Form -->
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10" Grid.Row="1" VerticalAlignment="Center">
+            <TextBox x:Name="TitleInput" Width="150" Margin="0 0 10 0" PlaceholderText="Title"/>
+            <TextBox x:Name="AuthorInput" Width="150" Margin="0 0 10 0" PlaceholderText="Author"/>
+            <TextBox x:Name="ISBNInput" Width="100" Margin="0 0 10 0" PlaceholderText="ISBN"/>
+            <CheckBox x:Name="AvailableInput" Content="Available" VerticalAlignment="Center" Margin="0 0 10 0"/>
+            <Button Content="Add" Click="AddBook_Click" Margin="5 0"/>
+            <Button Content="Update" Click="EditBook_Click" Margin="5 0"/>
+            <Button Content="Delete" Click="DeleteBook_Click" Margin="5 0"/>
+        </StackPanel>
+
+        <!-- Book List -->
+        <DataGrid x:Name="BooksDataGrid" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="BooksDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding BookID}" Width="Auto"/>
                 <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*"/>
                 <DataGridTextColumn Header="Author" Binding="{Binding Author}" Width="*"/>
                 <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" Width="*"/>
-                <DataGridTextColumn Header="Available" Binding="{Binding IsAvailable}" Width="Auto"/>
+                <DataGridCheckBoxColumn Header="Available" Binding="{Binding IsAvailable}" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </Page>
+
