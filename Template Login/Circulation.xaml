@@ -7,16 +7,18 @@
         mc:Ignorable="d"
         Title="Circulation" Height="475" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Library Circulation" HorizontalAlignment="Left" Width="217" Height="46" Margin="716,59,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Student Name" HorizontalAlignment="Left" Height="23" Margin="736,115,0,0" VerticalAlignment="Top" Width="88"/>
-        <Label Content="Book Name" HorizontalAlignment="Left" Height="23" Margin="737,206,0,0" VerticalAlignment="Top" Width="88" VerticalContentAlignment="Center"/>
-        <Button x:Name="btnBorrow" Content="Borrow" HorizontalAlignment="Left" Height="40" Margin="736,310,0,0" VerticalAlignment="Top" Width="89" Click="btnBorrow_Click"/>
-        <Button x:Name="btnReturn" Content="Return" HorizontalAlignment="Left" Height="40" Margin="844,310,0,0" VerticalAlignment="Top" Width="89"/>
-        <ComboBox x:Name="cbBook" HorizontalAlignment="Left" Height="34" Margin="736,239,0,0" VerticalAlignment="Top" Width="196"/>
-        <ComboBox x:Name="cbStudent" HorizontalAlignment="Left" Height="34" Margin="736,148,0,0" VerticalAlignment="Top" Width="197" SelectionChanged="cbStudent_SelectionChanged"/>
-        <DataGrid x:Name="gridTrasactions" HorizontalAlignment="Left" Height="323" Margin="48,87,0,0" VerticalAlignment="Top" Width="643" SelectionChanged="gridTrasactions_SelectionChanged"/>
-        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="40" Margin="736,366,0,0" VerticalAlignment="Top" Width="197"/>
-        <Button Content="Return" HorizontalAlignment="Left" Height="31" Margin="48,38,0,0" VerticalAlignment="Top" Width="97"/>
-        <Button Content="View" HorizontalAlignment="Left" Height="23" Margin="824,207,0,0" VerticalAlignment="Top" Width="86"/>
+        <DataGrid x:Name="gridTrasactions" HorizontalAlignment="Left" Height="323" Margin="48,87,0,0" VerticalAlignment="Top" Width="594" SelectionChanged="gridTrasactions_SelectionChanged"/>
+
+        <Label Content="Library Circulation" HorizontalAlignment="Left" Width="217" Height="46" Margin="677,84,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Student Name" HorizontalAlignment="Left" Height="23" Margin="687,135,0,0" VerticalAlignment="Top" Width="88"/>
+        <ComboBox x:Name="cbStudent" HorizontalAlignment="Left" Height="34" Margin="687,168,0,0" VerticalAlignment="Top" Width="197"/>
+
+        <Label Content="Book Name" HorizontalAlignment="Left" Height="24" Margin="688,215,0,0" VerticalAlignment="Top" Width="88" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbBook" HorizontalAlignment="Left" Height="34" Margin="687,249,0,0" VerticalAlignment="Top" Width="196" SelectionChanged="cbBook_SelectionChanged"/>
+        <Label x:Name="lblAvail" Content="Available Copies: 0" HorizontalAlignment="Left" Height="32" Margin="687,293,0,0" VerticalAlignment="Top" Width="197"/>
+
+        <Button x:Name="btnBorrow" Content="Borrow" HorizontalAlignment="Left" Height="40" Margin="687,359,0,0" VerticalAlignment="Top" Width="89" Click="btnBorrow_Click"/>
+        <Button x:Name="btnReturn" Content="Return" HorizontalAlignment="Left" Height="40" Margin="795,359,0,0" VerticalAlignment="Top" Width="89" Click="btnReturn_Click"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Height="31" Margin="48,38,0,0" VerticalAlignment="Top" Width="97" Click="btnBack_Click"/>
     </Grid>
 </Window>

@@ -20,7 +20,7 @@ namespace Template_Login
     /// </summary>
     public partial class MainWindow : Window
     {
-        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString);
+        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString2);
 
         public MainWindow()
         {
@@ -51,7 +51,7 @@ namespace Template_Login
                     }
                     else if (users.RoleID == "R2")
                     {
-                        LibrarianWindow librarianHome = new LibrarianWindow();
+                        LibrarianWindow librarianHome = new LibrarianWindow(users.UserID);
                         librarianHome.Show();
                         this.Close();
                     }

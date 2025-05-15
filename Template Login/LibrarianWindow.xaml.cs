@@ -19,15 +19,32 @@ namespace Template_Login
     /// </summary>
     public partial class LibrarianWindow : Window
     {
-        public LibrarianWindow()
+        private string staff;
+
+        public LibrarianWindow(string id)
         {
             InitializeComponent();
+            staff = id;
         }
 
         private void btnTransaction_Click(object sender, RoutedEventArgs e)
         {
-            Circulation transact = new Circulation();
+            Circulation transact = new Circulation(staff);
             transact.Show();
+            this.Close();
+        }
+
+        private void btnCatalogue_Click(object sender, RoutedEventArgs e)
+        {
+            Catalogue library = new Catalogue(staff);
+            library.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow login = new MainWindow();
+            login.Show();
             this.Close();
         }
     }

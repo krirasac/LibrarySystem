@@ -6,7 +6,7 @@ namespace Template_Login
 {
     public partial class adminHome : Window
     {
-        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString);
+        DataClasses1DataContext db = new DataClasses1DataContext(Properties.Settings.Default.NULibraryConnectionString1);
 
         public adminHome()
         {

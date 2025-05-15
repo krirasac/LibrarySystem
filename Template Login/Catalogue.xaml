@@ -17,7 +17,7 @@
             <Button Content="Search"/>
             <CheckBox x:Name="AvailabilityFilter" Content="Only Available" Margin="10 0 0 0" />
         </StackPanel>
-
+        <Button x:Name="btnReturn" Content="Return" Height="21" Width="51" Margin="719,0,10,9" VerticalAlignment="Bottom" Click="btnReturn_Click"/>
         <DataGrid x:Name="BooksDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding BookID}" Width="Auto"/>
